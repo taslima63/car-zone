@@ -1,19 +1,38 @@
 import React, { useEffect } from 'react';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 
 const SignIn = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    // for google
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    // for email & password
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
+    let signInError;
+
+    if (error || gError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    }
+
+
+    const onSubmit = data => {
+        signInWithEmailAndPassword(data.email, data.password);
+    }
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Sign In</h2>
-                    <form>
-                        {/* <form onSubmit={handleSubmit(onSubmit)}> */}
-
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -62,15 +81,15 @@ const SignIn = () => {
                                 {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             </label>
                         </div>
-
-
+                        {/* show error msg during sign in */}
+                        {signInError}
                         <input className='btn w-full max-w-xs text-white bg-violet-700' type="submit" value="Sign In" />
                     </form>
-
+                    <p><small>Forgot Password?<Link className='text-primary' >Reset Password</Link></small></p>
                     <p><small>New to Car Zone <Link to='/signup' className='text-violet-700'>Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
-
+                        onClick={() => signInWithGoogle()}
                         className="btn btn-outline"
                     >Continue with Google</button>
                 </div>

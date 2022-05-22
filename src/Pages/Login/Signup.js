@@ -2,19 +2,38 @@ import React from 'react';
 
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Signup = () => {
-
     const { register, formState: { errors }, handleSubmit } = useForm();
+    // for google
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    // for email & password
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
+    let signUpError;
+
+    if (error || gError) {
+        signUpError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    }
+
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password);
+
+    }
 
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Sign Up</h2>
-                    <form >
+                    <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
@@ -85,13 +104,15 @@ const Signup = () => {
                             </label>
                         </div>
 
+                        {/* show error msg during sign up */}
+                        {signUpError}
 
                         <input className='btn w-full max-w-xs bg-violet-500 text-white' type="submit" value="Sign Up" />
                     </form>
                     <p><small>Already have an account? <Link className='text-violet-600' to="/signin">Please Sign In</Link></small></p>
                     <div className="divider">OR</div>
                     <button
-
+                        onClick={() => signInWithGoogle()}
                         className="btn btn-outline"
                     >Continue with Google</button>
                 </div>

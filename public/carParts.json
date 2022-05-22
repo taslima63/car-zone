@@ -1,0 +1,41 @@
+[
+    {
+        "_id": 1,
+        "name": "Bumper Cover",
+        "price": 377.99,
+        "brand": "Replacement",
+        "menufacturer": "#REPF010308PQ",
+        "Warranty": "1-year Replacement unlimited-mileage warranty",
+        "description": "Manufactured from top quality components, this is your best option and inexpensive replacement for your rebuild, repair, and maintenance needs - an OE replacement product for your damaged or aged factory part.",
+        "MOQ": 1,
+        "available": "123",
+        "img": "https://i.ibb.co/njSwk3R/bumper-cover.webp",
+        "ratings": 5
+    },
+    {
+        "_id": 2,
+        "name": "Headlight",
+        "price": 98.99,
+        "brand": "Dorman",
+        "menufacturer": "#1592168",
+        "Warranty": "Lifetime Dorman limited warranty",
+        "description": "Affordable, directly compatible and built to last, Dorman’s OE replacement headlight stands out as the smart option. Since 1918, Dorman Products has supplied the automotive aftermarket with high-quality replacement parts, hardware and fasteners.",
+        "MOQ": 1,
+        "available": "44",
+        "img": "https://i.ibb.co/721kDrn/headlight.webp",
+        "ratings": 5
+    },
+    {
+        "_id": 3,
+        "name": "Black Finish Wheel ",
+        "price": 286.99,
+        "brand": "AutoWheels",
+        "menufacturer": " #AFM03999U45N",
+        "Warranty": "Jante 2-Year Limited Warranty",
+        "description": "AutoWheels stock replacement wheel provides an ideal fit, form, and performance for your vehicle right out of the box. It also perfectly meets and exceeds all of the standards of your stock item and has been thoroughly tested to ensure safety and quality.",
+        "MOQ": 2,
+        "available": "456",
+        "img": "https://i.ibb.co/tpzgJkm/wheels.webp",
+        "ratings": 5
+    }
+]
