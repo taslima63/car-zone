@@ -27,8 +27,8 @@ const Banner = () => {
                     <img src="https://api.lorem.space/image/pizza?w=400&h=300&hash=7F5AE56A" alt="Pizza" />
                 </div>
             </div>
-            <div>
-                <h1 className='text-3xl text-violet-700 text-center my-8 font-bold'>Welcome to Car Zone</h1>
+            <div className='mt-5'>
+                <h1 className='text-3xl text-violet-700 text-center mb-5 font-bold'>Welcome to Car Zone</h1>
                 <p className='text-lg text-zinc-600 text-center my-3 font-semibold'>Your partner to provide quality products in cheaper price.</p>
             </div>
             <Features></Features>
