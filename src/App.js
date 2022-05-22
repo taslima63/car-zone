@@ -2,6 +2,7 @@
 
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import CarParts from './Pages/CarParts/CarParts';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -14,6 +15,7 @@ import About from './Pages/Home/About';
 import Contact from './Pages/Home/Contact';
 import Home from './Pages/Home/Home';
 import Reviews from './Pages/Home/Reviews';
+import RequireAuth from './Pages/Login/RequireAuth';
 import SignIn from './Pages/Login/SignIn';
 import Signup from './Pages/Login/Signup';
 import Footer from './Pages/Shared/Footer';
@@ -21,7 +23,7 @@ import Navbar from './Pages/Shared/Navbar';
 
 function App() {
   return (
-    <div className='px-4'>
+    <div className=''>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
@@ -30,9 +32,16 @@ function App() {
         <Route path='contact' element={<Contact />}></Route>
         <Route path='signin' element={<SignIn />}></Route>
         <Route path='signup' element={<Signup />}></Route>
-
+        <Route path='carParts' element={
+          <RequireAuth>
+            <CarParts />
+          </RequireAuth>
+        }
+        ></Route>
         <Route path='dashboard' element={
-          <Dashboard />
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
         }
         >
           <Route index element={<MyProfile />}></Route>

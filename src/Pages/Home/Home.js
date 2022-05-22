@@ -1,12 +1,12 @@
 import React from 'react';
-import CarParts from '../CarParts/CarParts';
 import Banner from './Banner';
+import ProductShowcase from './ProductShowcase';
 
 const Home = () => {
     return (
-        <div>
+        <div className='px-6'>
             <Banner />
-            <CarParts />
+            <ProductShowcase />
 
         </div>
     );

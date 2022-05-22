@@ -13,7 +13,7 @@ const SingleParts = ({ singlePart }) => {
                 <small>{description}</small>
                 <small>Warranty : {Warranty}</small>
                 <div className="card-actions justify-center">
-                    <button className="btn w-100 bg-yellow-400 text-white mt-4">Shop Now</button>
+                    <button className="btn w-100 bg-yellow-400 border-0 text-white mt-4 capitalize">Order Now</button>
                 </div>
             </div>
         </div>

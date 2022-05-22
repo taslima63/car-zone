@@ -3,7 +3,7 @@ import Features from './Features';
 
 const Banner = () => {
     return (
-        <div>
+        <div className='mt-1'>
             <div className="carousel carousel-center rounded-box">
                 <div className="carousel-item">
                     <img src="https://api.lorem.space/image/pizza?w=400&h=300&hash=8B7BCDC2" alt="Pizza" />
