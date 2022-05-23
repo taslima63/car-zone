@@ -1,6 +1,11 @@
 import React from 'react';
+import OrderModal from './OrderModal';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
-const SingleParts = ({ singlePart }) => {
+const SingleParts = ({ singlePart, refetch }) => {
+    const [user] = useAuthState(auth);
+
     const { name, brand, price, description, MOQ, available, Warranty, img } = singlePart;
     return (
 
@@ -10,12 +15,17 @@ const SingleParts = ({ singlePart }) => {
                 <h2 className="card-title">Name : {name}</h2>
                 <p>Brand : {brand}</p>
                 <small>Price : {price}</small>
+                <small>Available : {available}</small>
                 <small>{description}</small>
                 <small>Warranty : {Warranty}</small>
                 <div className="card-actions justify-center">
-                    <button className="btn w-100 bg-yellow-400 border-0 text-white mt-4 capitalize">Order Now</button>
+                    <label htmlFor="order-modal" className="btn modal-button w-100 bg-yellow-400 border-0 text-white mt-4 capitalize">Order Now</label>
+                    {/* <button className="btn w-100 bg-yellow-400 border-0 text-white mt-4 capitalize">Order Now</button> */}
                 </div>
             </div>
+            {
+                (user && available > 0) && <OrderModal user={user} singlePart={singlePart} refetch={refetch}></OrderModal>
+            }
         </div>
 
     );

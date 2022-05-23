@@ -2,8 +2,9 @@ import React from 'react';
 
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -18,6 +19,10 @@ const Signup = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
 
     let signUpError;
+
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
 
     if (error || gError) {
         signUpError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>

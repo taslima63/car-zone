@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 
 const SignIn = () => {
@@ -20,7 +21,17 @@ const SignIn = () => {
     const location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
+
     let signInError;
+    useEffect(() => {
+
+        navigate(from, { replace: true });
+
+    }, [from])
+
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
 
     if (error || gError) {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
@@ -29,13 +40,15 @@ const SignIn = () => {
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
+
     }
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex h-screen justify-center items-center my-10'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Sign In</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
+
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -84,12 +97,12 @@ const SignIn = () => {
                                 {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             </label>
                         </div>
-                        {/* show error msg during sign in */}
+
                         {signInError}
-                        <input className='btn w-full max-w-xs text-white bg-violet-700' type="submit" value="Sign In" />
+                        <input className='btn w-full max-w-xs text-white' type="submit" value="Sign In" />
                     </form>
-                    <p><small>Forgot Password?<Link className='text-primary' >Reset Password</Link></small></p>
-                    <p><small>New to Car Zone <Link to='/signup' className='text-violet-700'>Create New Account</Link></small></p>
+                    <p><small>Forgot Password?<Link className='text-primary' to="/signup">Reset Password</Link></small></p>
+                    <p><small>New to Car Zone? <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}

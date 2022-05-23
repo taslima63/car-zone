@@ -1,0 +1,22 @@
+[
+    {
+        "_id": 1,
+        "email": "ruba6315.tr@gmail.com",
+        "role": "admin"
+    },
+    {
+        "_id": 1,
+        "email": "ruba.taslima63@gmail.com",
+        "role": "admin"
+    },
+    {
+        "_id": 1,
+        "email": "abid@gmail.com",
+        "role": ""
+    },
+    {
+        "_id": 1,
+        "email": "user1@gmail.com",
+        "role": ""
+    }
+]

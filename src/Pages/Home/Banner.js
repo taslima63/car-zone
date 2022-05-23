@@ -6,13 +6,13 @@ const Banner = () => {
         <div className='mt-1'>
             <div className="carousel carousel-center rounded-box">
                 <div className="carousel-item">
-                    <img src="https://api.lorem.space/image/pizza?w=400&h=300&hash=8B7BCDC2" alt="Pizza" />
+                    <img src="https://i.ibb.co/WfjVFyV/c33.jpg" alt="engine" />
                 </div>
                 <div className="carousel-item">
-                    <img src="https://api.lorem.space/image/pizza?w=400&h=300&hash=500B67FB" alt="Pizza" />
+                    <img src="https://i.ibb.co/mvPrRnS/c22.jpg" alt="tire" />
                 </div>
                 <div className="carousel-item">
-                    <img src="https://api.lorem.space/image/pizza?w=400&h=300&hash=A89D0DE6" alt="Pizza" />
+                    <img src="https://i.ibb.co/rsVcyt8/c44.jpg" alt="headlight" />
                 </div>
                 <div className="carousel-item">
                     <img src="https://api.lorem.space/image/pizza?w=400&h=300&hash=225E6693" alt="Pizza" />
