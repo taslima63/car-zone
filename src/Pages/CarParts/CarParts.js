@@ -11,7 +11,7 @@ const CarParts = () => {
     //         .then(data => setParts(data))
     // }, []);
 
-    const { data: parts, isLoading, refetch } = useQuery('available', () => fetch(`http://localhost:5000/available`).then((res) => res.json())
+    const { data: parts, isLoading, refetch } = useQuery('carParts', () => fetch(`http://localhost:5000/carParts`).then((res) => res.json())
     )
 
     if (isLoading) {

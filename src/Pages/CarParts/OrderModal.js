@@ -12,7 +12,6 @@ const OrderModal = ({ singlePart, user, refetch }) => {
     let quantity;
 
     const calcTotalAmount = (event) => {
-
         quantity = event.target.quantity.value;
         console.log(quantity);
         if (quantity >= MOQ && quantity <= available) {
