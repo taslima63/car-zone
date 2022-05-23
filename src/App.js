@@ -45,6 +45,7 @@ function App() {
         }
         >
           <Route index element={<MyProfile />}></Route>
+          <Route path='myProfile' element={<MyProfile />}></Route>
           <Route path="myOrder" element={<MyOrders />}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="manageOrder" element={<ManageOrder />}></Route>

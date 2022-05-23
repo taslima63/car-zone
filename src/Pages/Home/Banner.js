@@ -14,18 +14,6 @@ const Banner = () => {
                 <div className="carousel-item">
                     <img src="https://i.ibb.co/rsVcyt8/c44.jpg" alt="headlight" />
                 </div>
-                <div className="carousel-item">
-                    <img src="https://api.lorem.space/image/pizza?w=400&h=300&hash=225E6693" alt="Pizza" />
-                </div>
-                <div className="carousel-item">
-                    <img src="https://api.lorem.space/image/pizza?w=400&h=300&hash=9D9539E7" alt="Pizza" />
-                </div>
-                <div className="carousel-item">
-                    <img src="https://api.lorem.space/image/pizza?w=400&h=300&hash=BDC01094" alt="Pizza" />
-                </div>
-                <div className="carousel-item">
-                    <img src="https://api.lorem.space/image/pizza?w=400&h=300&hash=7F5AE56A" alt="Pizza" />
-                </div>
             </div>
             <div className='mt-5'>
                 <h1 className='text-3xl text-violet-700 text-center mb-5 font-bold'>Welcome to Car Zone</h1>

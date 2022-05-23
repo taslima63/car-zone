@@ -21,13 +21,15 @@ const SignIn = () => {
     const location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
-
     let signInError;
+
     useEffect(() => {
 
-        navigate(from, { replace: true });
+        if (from) {
+            navigate(from, { replace: true });
+        }
 
-    }, [from])
+    }, [from, navigate])
 
     if (loading || gLoading) {
         return <Loading></Loading>

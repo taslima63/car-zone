@@ -1,10 +1,11 @@
 import React from 'react';
 
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
+
 
 const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -18,7 +19,13 @@ const Signup = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+    const navigate = useNavigate();
     let signUpError;
+
+
+    navigate('/');
+
+
 
     if (loading || gLoading) {
         return <Loading></Loading>
@@ -34,7 +41,7 @@ const Signup = () => {
     }
 
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex  justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Sign Up</h2>
