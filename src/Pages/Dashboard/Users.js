@@ -4,8 +4,14 @@ import Loading from '../Shared/Loading';
 import UserRow from './UserRow';
 
 const Users = () => {
-    const { data: users, isLoading } = useQuery('users', () => fetch('http://localhost:5000/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
     }).then(res => res.json()));
+    console.log("users", users);
+
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -31,7 +37,7 @@ const Users = () => {
                                     key={user._id}
                                     user={user}
                                     index={index}
-
+                                    refetch={refetch}
                                 ></UserRow>)
                             }
 
