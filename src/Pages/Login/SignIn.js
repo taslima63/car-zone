@@ -8,7 +8,7 @@ import Loading from '../Shared/Loading';
 
 
 const SignIn = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
     // for google
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     // for email & password
@@ -42,6 +42,7 @@ const SignIn = () => {
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
+        reset();
 
     }
     return (

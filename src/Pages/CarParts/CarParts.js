@@ -4,13 +4,6 @@ import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import SingleParts from './SingleParts';
 const CarParts = () => {
-    // const [parts, setParts] = useState([]);
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/carParts')
-    //         .then(res => res.json())
-    //         .then(data => setParts(data))
-    // }, []);
-
     const { data: parts, isLoading, refetch } = useQuery('carParts', () => fetch(`http://localhost:5000/carParts`).then((res) => res.json())
     )
 

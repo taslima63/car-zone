@@ -1,4 +1,4 @@
-import userEvent from '@testing-library/user-event';
+
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import DatePicker from "react-datepicker";
@@ -60,8 +60,9 @@ const OrderModal = ({ singlePart, user, refetch }) => {
                 else {
                     toast.error(`Check all the info is correctly provide`);
                 }
-
+                event.target.reset();
                 refetch();
+
             });
     }
     return (

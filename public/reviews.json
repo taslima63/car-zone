@@ -1,0 +1,30 @@
+[
+    {
+        "_id": 1,
+        "name": "jhonny depp",
+        "comment": "Their service is awesome. definitely gonna  buy again.",
+        "rating": 5,
+        "img": "https://i.ibb.co/njSwk3R/bumper-cover.webp"
+    },
+    {
+        "_id": 2,
+        "name": "Amber Heard",
+        "comment": "Their service is shit. definitely not gonna  buy again.",
+        "rating": 1,
+        "img": "https://i.ibb.co/njSwk3R/bumper-cover.webp"
+    },
+    {
+        "_id": 3,
+        "name": "Camilla Vasquez",
+        "comment": "My friend recommend this store to  me. after buying new headlight and tail light i am gonna recommend this to eveyONe",
+        "rating": 5,
+        "img": "https://i.ibb.co/njSwk3R/bumper-cover.webp"
+    },
+    {
+        "_id": 4,
+        "name": "Elon Musk",
+        "comment": "Their service is not good. I want to buy this shop and renovate every thing according to my wish. what say?",
+        "rating": 1.5,
+        "img": "https://i.ibb.co/njSwk3R/bumper-cover.webp"
+    }
+]
