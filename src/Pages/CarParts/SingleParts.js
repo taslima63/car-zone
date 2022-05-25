@@ -1,12 +1,14 @@
 import React from 'react';
-import OrderModal from './OrderModal';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
+import { useNavigate } from 'react-router-dom';
 
-const SingleParts = ({ singlePart, refetch }) => {
-    const [user] = useAuthState(auth);
+const SingleParts = ({ singlePart }) => {
+    const { _id, name, brand, price, description, MOQ, available, img } = singlePart;
+    const navigate = useNavigate();
+    const navigateToPartsDetail = (id) => {
+        console.log("PartsId", id);
+        navigate(`/carParts/${id}`);
+    }
 
-    const { name, brand, price, description, MOQ, available, Warranty, img } = singlePart;
     return (
 
         <div className="card max-w-lg bg-base-100 shadow-xl">
@@ -17,15 +19,12 @@ const SingleParts = ({ singlePart, refetch }) => {
                 <small>Price : {price}</small>
                 <small>Available : {available}</small>
                 <small>{description}</small>
-                <small>Warranty : {Warranty}</small>
-                <div className="card-actions justify-center">
-                    <label htmlFor="order-modal" className="btn modal-button w-100 bg-yellow-400 border-0 text-white mt-4 capitalize">Order Now</label>
-                    {/* <button className="btn w-100 bg-yellow-400 border-0 text-white mt-4 capitalize">Order Now</button> */}
+
+                <div className="justify-center">
+                    <button className="btn w-100 bg-yellow-400 border-0 text-white mt-4 capitalize" onClick={() => navigateToPartsDetail(_id)}>Order Now</button>
                 </div>
             </div>
-            {
-                (user && available > 0) && <OrderModal user={user} singlePart={singlePart} refetch={refetch}></OrderModal>
-            }
+
         </div>
 
     );

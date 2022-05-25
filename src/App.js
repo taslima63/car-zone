@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
 import CarParts from './Pages/CarParts/CarParts';
+import PartDetails from './Pages/CarParts/PartDetails';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -36,6 +37,12 @@ function App() {
         <Route path='carParts' element={
           <RequireAuth>
             <CarParts />
+          </RequireAuth>
+        }
+        ></Route>
+        <Route path='/carParts/:partId' element={
+          <RequireAuth>
+            <PartDetails />
           </RequireAuth>
         }
         ></Route>
