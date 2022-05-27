@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import UserRow from './UserRow';
 
 const Users = () => {
+    const [deleteUser, setDeleteUser] = useState(null);
     const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()));
-    console.log("users", users);
 
     if (isLoading) {
         return <Loading></Loading>
@@ -38,6 +38,7 @@ const Users = () => {
                                     user={user}
                                     index={index}
                                     refetch={refetch}
+                                    setDeleteUser={setDeleteUser}
                                 ></UserRow>)
                             }
 

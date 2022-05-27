@@ -1,10 +1,10 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const UserRow = ({ user, index, refetch }) => {
+const UserRow = ({ user, index, refetch, setDeleteUser }) => {
     const { email, role } = user;
     const makeAdmin = () => {
-        console.log(email);
+
         fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
@@ -30,7 +30,9 @@ const UserRow = ({ user, index, refetch }) => {
             <th>{index + 1}</th>
             <td>{email}</td>
             <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
-            <td><button className="btn btn-xs">Remove User</button></td>
+            <td>
+                <label onClick={() => setDeleteUser(user)} htmlFor="delete-confirm-modal" className="btn btn-xs btn-error">Remove User</label>
+            </td>
         </tr>
 
     );

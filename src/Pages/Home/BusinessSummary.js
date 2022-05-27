@@ -34,8 +34,6 @@ const BusinessSummary = () => {
                         <div className="font-bold text-3xl text-yellow-500">24/7</div>
                         <div className="mt-3"><FontAwesomeIcon icon={faBusinessTime} size="xl" /></div>
                     </div>
-
-
                 </div>
             </div>
         </div>

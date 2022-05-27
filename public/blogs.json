@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "question": "What are the different ways to manage a state in a React application?",
+        "answer": "Every React component has a built-in state. This state is an object which stores the property values that belong to a component.The built-in way that React provides for setting component states is by using setState() and adding “local state” to a class. There are several other ways to manage state​s in React, including the use of:Hooks, React Context API,Apollo Link State",
+        "img": "https://i.ibb.co/7QWrrbS/js-vs-node.jpg",
+        "author": "Taslima Akter",
+        "date": "2022/05/08"
+    },
+    {
+        "id": 2,
+        "question": "How does prototypical inheritance work?",
+        "answer": "The core idea of Prototypal Inheritance is that an object can point to another object and inherit all it properties. The main purpose is to allow multiple instances of an object to share common properties",
+        "img": "https://i.ibb.co/ZmrCbFM/node-mongodb.png",
+        "author": "Taslima Akter",
+        "date": "2022/04/18"
+    },
+    {
+        "id": 3,
+        "question": "SQL vs Mongodb",
+        "answer": "SQL is structured query language used in Relational Database. In SQL each individual records are stored as 'row'. A Table is used to store Row's (records of similar type). In contrary Mongodb is a NoSQL database. Each individual records are stored as 'documents' Documemts belonging to a particular group stored as Collection",
+        "img": "https://i.ibb.co/sWptCVJ/mongo-Vssql.png",
+        "author": "Taslima Akter",
+        "date": "2021/12/31"
+    }
+]
