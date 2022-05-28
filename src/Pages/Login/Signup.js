@@ -29,7 +29,9 @@ const Signup = () => {
         navigate('/');
     }
 
+    if (user || gUser) {
 
+    }
 
     if (loading || gLoading) {
         return <Loading></Loading>

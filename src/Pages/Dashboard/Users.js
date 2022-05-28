@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import DeleteConfirmModal from './DeleteConfirmModal';
 import UserRow from './UserRow';
 
 const Users = () => {
@@ -16,11 +17,11 @@ const Users = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <div >
             <h1>Manage Admin List</h1>
             <div>
                 <h2 className='text-2xl'>All Users:{users.length}</h2>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto ">
                     <table className="table w-full">
 
                         <thead>
@@ -45,6 +46,7 @@ const Users = () => {
                         </tbody>
                     </table>
                 </div>
+                {deleteUser && <DeleteConfirmModal setDeleteUser={setDeleteUser} deleteUser={deleteUser} refetch={refetch} />}
             </div>
         </div>
     );

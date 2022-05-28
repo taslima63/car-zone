@@ -12,7 +12,6 @@ const useToken = (user) => {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(currentUser)
             })
@@ -20,6 +19,7 @@ const useToken = (user) => {
                 .then(data => {
                     console.log('data inside useToken', data);
                     const accessToken = data.token;
+                    console.log(accessToken);
                     localStorage.setItem('accessToken', accessToken);
                     setToken(accessToken);
                 })

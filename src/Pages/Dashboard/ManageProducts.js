@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import ProductDeleteModal from './ProductDeleteModal';
 import ProductRow from './ProductRow';
 
 const ManageProducts = () => {
@@ -16,13 +17,12 @@ const ManageProducts = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <div className="overflow-y-hidden px-2">
             <h1>Manage Products</h1>
             <div>
                 <h2 className='text-2xl'>All Products:{parts.length}</h2>
                 <div className="overflow-x-auto">
-                    <table className="table w-full">
-
+                    <table className="table w-full ">
                         <thead>
                             <tr>
                                 <th>Serial</th>
@@ -43,13 +43,15 @@ const ManageProducts = () => {
                                     setDeleteProduct={setDeleteProduct}
                                 ></ProductRow>)
                             }
-
                         </tbody>
                     </table>
                 </div>
+                {
+                    deleteProduct && <ProductDeleteModal deleteProduct={deleteProduct} setDeleteProduct={setDeleteProduct} refetch={refetch} />
+                }
             </div>
         </div>
     );
 };
 
-export default ManageProducts;
+export default ManageProducts; 

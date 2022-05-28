@@ -27,10 +27,6 @@ const OrderModal = ({ part, user }) => {
         }
     }
 
-    // const getInputValue = (event) => {
-    //     // show the user input value to console
-    //     quantity = event.target.value;
-    // };
 
     const handleOrder = (event) => {
         event.preventDefault();
@@ -40,7 +36,7 @@ const OrderModal = ({ part, user }) => {
             date: date,
             unit_price: price,
             order_quantity: parseInt(event.target.quantity.value),
-            totalAmount: totalAmount,
+            totalAmount: price * parseInt(event.target.quantity.value),
             user: user?.email || '',
             userName: user?.displayName || '',
             phone: event.target.phone.value

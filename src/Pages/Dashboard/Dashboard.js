@@ -4,15 +4,13 @@ import useAdmin from '../../hooks/useAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
-
-
 const Dashboard = () => {
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
     return (
         <div className="drawer drawer-mobile">
             <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content ">
+            <div className="drawer-content overflow-y-hidden">
                 <h2 className='text-3xl font-bold text-yellow-500 text-center my-8'>Welcome to Dashboard</h2>
                 <Outlet className="my-8" />
             </div>

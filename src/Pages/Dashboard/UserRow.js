@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 const UserRow = ({ user, index, refetch, setDeleteUser }) => {
     const { email, role } = user;
     const makeAdmin = () => {
-
         fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
@@ -25,7 +24,6 @@ const UserRow = ({ user, index, refetch, setDeleteUser }) => {
             })
     }
     return (
-
         <tr>
             <th>{index + 1}</th>
             <td>{email}</td>
@@ -34,7 +32,6 @@ const UserRow = ({ user, index, refetch, setDeleteUser }) => {
                 <label onClick={() => setDeleteUser(user)} htmlFor="delete-confirm-modal" className="btn btn-xs btn-error">Remove User</label>
             </td>
         </tr>
-
     );
 };
 
