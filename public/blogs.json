@@ -3,23 +3,39 @@
         "id": 1,
         "question": "What are the different ways to manage a state in a React application?",
         "answer": "Every React component has a built-in state. This state is an object which stores the property values that belong to a component.The built-in way that React provides for setting component states is by using setState() and adding “local state” to a class. There are several other ways to manage state​s in React, including the use of:Hooks, React Context API,Apollo Link State",
-        "img": "https://i.ibb.co/7QWrrbS/js-vs-node.jpg",
+        "img": "https://i.ibb.co/D1gpV5D/1-L6-VRj89-jxhx-Dp6-NDOm-Yr-A.png",
         "author": "Taslima Akter",
         "date": "2022/05/08"
     },
     {
         "id": 2,
         "question": "How does prototypical inheritance work?",
-        "answer": "The core idea of Prototypal Inheritance is that an object can point to another object and inherit all it properties. The main purpose is to allow multiple instances of an object to share common properties",
-        "img": "https://i.ibb.co/ZmrCbFM/node-mongodb.png",
+        "answer": "The core idea of Prototypal Inheritance is that an object can point to another object and inherit all it properties. The main purpose is to allow multiple instances of an object to share common properties.Inheritance solves the problem of data and logic duplication. By inheriting, objects can share properties and methods.",
+        "img": "https://i.ibb.co/k2B14v1/prototypal-inheritance.jpg",
         "author": "Taslima Akter",
         "date": "2022/04/18"
     },
     {
         "id": 3,
-        "question": "SQL vs Mongodb",
-        "answer": "SQL is structured query language used in Relational Database. In SQL each individual records are stored as 'row'. A Table is used to store Row's (records of similar type). In contrary Mongodb is a NoSQL database. Each individual records are stored as 'documents' Documemts belonging to a particular group stored as Collection",
-        "img": "https://i.ibb.co/sWptCVJ/mongo-Vssql.png",
+        "question": "How will you improve the performance of a React Application?",
+        "answer": "React Virtual DOM concept might be amazing but it knowingly or unknowingly creates many performance issues by unnecessary rendering of components in DOM tree. This even makes a medium-sized app slow in terms of performance.Minimizing unnecessary rendering can improve performance.Also optimizing the loading time can do so.In order to improve app-loading time, a rule of thumb is to load the images at the moment of need instead of loading them while the app’s page is loading. This is referred to as Lazy loading of Images.",
+        "img": "https://i.ibb.co/Jcm4YbB/1-aa-YOh1-Bn-R-ao-Rv27pfr9n-Q.png",
+        "author": "Taslima Akter",
+        "date": "2021/12/31"
+    },
+    {
+        "id": 4,
+        "question": "What is a unit test? Why should write unit tests?",
+        "answer": "Unit testing ensures that all code meets quality standards before it's deployed. This ensures a reliable engineering environment where quality is paramount. Over the course of the product development life cycle, unit testing saves time and money, and helps developers write better code, more efficiently.One of the benefits of unit tests is that they isolate a function, class or method and only test that piece of code. Higher quality individual components create overall system resiliency. Thus, the result is reliable code.",
+        "img": "https://i.ibb.co/4mNrLGH/1-c-M63wp-LTn-GEFHFQKbqf9og.png",
+        "author": "Taslima Akter",
+        "date": "2021/12/31"
+    },
+    {
+        "id": 5,
+        "question": "Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts",
+        "answer": "One should never update the state directly.Because If state is updated directly, calling the setState() afterward may just replace the update have been made.When  directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition.And accessing it after calling this method will only return the present value.As a result developer will lose control of the state across all components.",
+        "img": "https://i.ibb.co/WncQ94J/why-not-modify-react-state-twitter.png",
         "author": "Taslima Akter",
         "date": "2021/12/31"
     }

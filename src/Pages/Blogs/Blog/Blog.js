@@ -9,7 +9,7 @@ const Blog = ({ blog }) => {
                 <img className='rounded-3' src={img} alt="" />
             </div>
             <div className='p-2'>
-                <h4 className='title rainbowhead my-3 text-center'>Halal Food Japan</h4>
+                <h4 className='title rainbowhead my-3 text-center'>Car Zone</h4>
                 <div className='text-start'>
                     <h3 className='question  text-center'>{question}</h3>
                     <small className='pe-2'>Written By :
